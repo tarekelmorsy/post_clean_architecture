@@ -17,10 +17,10 @@ abstract class PostRemoteDateSource {
 
 const BASE_URL = "https://jsonplaceholder.typicode.com";
 
-class PostLocalDateSourceImpl implements PostRemoteDateSource {
+class PostRemoteDateSourceImpl implements PostRemoteDateSource {
   final http.Client client;
 
-  PostLocalDateSourceImpl({required this.client});
+  PostRemoteDateSourceImpl({required this.client});
 
   @override
   Future<List<PostModel>> getPosts() async {

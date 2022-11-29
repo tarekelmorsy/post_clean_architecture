@@ -14,38 +14,47 @@ class PostDetailWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8),
-      child: Column(
-        children: [
-          Text(
-            post.title,
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          Divider(
-            height: 50,
-          ),
-          Text(
-            post.body,
-            style: TextStyle(
-              fontSize: 16,
-            ),
-          ),
-          Divider(
-            height: 50,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              UpdatePostBtnWidget(post: post),
-              DeletePostBtnWidget(postId: post.id!)
-            ],
-          )
-        ],
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("post detail"),
       ),
+      body:
+        Padding(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                post.title,
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              Divider(
+                height: 50,
+              ),
+              Text(
+                post.body,
+                style: TextStyle(
+                  fontSize: 16,
+                ),
+              ),
+              Divider(
+                height: 50,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  UpdatePostBtnWidget(post: post),
+                  DeletePostBtnWidget(postId: post.id!)
+                ],
+              )
+            ],
+          ),
+        ),
+
     );
   }
 }
